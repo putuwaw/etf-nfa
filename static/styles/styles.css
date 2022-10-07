@@ -1,1 +1,5 @@
-/* styles.css */
+ul,
+li {
+  list-style: none;
+  padding: 0 !important;
+}
