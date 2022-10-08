@@ -15,7 +15,7 @@
             <option value="L1">Bahasa L1 (diawali dengan simbol 1 dan diakhiri dengan simbol 0 dan terdapat
                 subtring 11)</option>
             <option value="L2">Bahasa L2 (mengandung prefiks 11 dan jumlah 1 genap)</option>
-            <option disabled value="L3">Bahasa L3 (diawali 00 dan diakhiri 11 dan jumlah 0 genap)</option>
+            <option value="L3">Bahasa L3 (diawali 00 dan diakhiri 11 dan jumlah 0 genap)</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Cek String</button>
@@ -41,6 +41,12 @@
             <h5 class="">Diagram Transisi NFA untuk L2:</h5>
             <img class="img-fluid" src="{{ url_for('static', filename='images/languageL2.png') }}"
                 alt="Transition Diagram for Language L2">
+        {% endif %}
+        {% if language == "L3" %}
+            <h5 class="">Bahasa: <span class="lead">L3</span> </h5>
+            <h5 class="">Diagram Transisi NFA untuk L3:</h5>
+            <img class="img-fluid" src="{{ url_for('static', filename='images/languageL3.png') }}"
+                alt="Transition Diagram for Language L3">
         {% endif %}
         <div class="mt-3">
             <h5 class="">Langkah-Langkah:</h5>
