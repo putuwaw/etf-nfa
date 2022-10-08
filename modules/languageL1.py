@@ -38,7 +38,7 @@ def delta_helper(state, string):
     elif state == "q\u2081" and string[-1] == "1":
         ROW_SAVER.append("{q\u2082}")
     elif state == "q\u2082" and string[-1] == "0":
-        ROW_SAVER.append("{q\u2082}, {q\u2083}")
+        ROW_SAVER.append("{q\u2082, q\u2083}")
     elif state == "q\u2082" and string[-1] == "1":
         ROW_SAVER.append("{q\u2082}")
     elif state == "q\u2084" and string[-1] == "0":
@@ -76,6 +76,8 @@ def delta(state, string):
         TEMP.add("q\u2084")
     elif state == "q\u2084" and string[-1] == "1":
         TEMP.add("q\u2081")
+    else:
+        TEMP.add("\u2205")
 
 
 #
@@ -123,7 +125,12 @@ def delta_hat(state, string):
     SAVER = TEMP
     TEMP = set([])
     # append the result of the process to the global variable ROW_SAVER
-    ROW_SAVER.append("{" + ", ".join(list(SAVER)) + "}")
+    if len(SAVER) == 1 and list(SAVER)[0] == "\u2205":
+        ROW_SAVER.append(", ".join(list(SAVER)))
+    else:
+        if "\u2205" in SAVER:
+            SAVER.remove("\u2205")
+        ROW_SAVER.append("{" + ", ".join(list(SAVER)) + "}")
     # for every function call, the result will be appended to DETAIL_SAVER
     DETAIL_SAVER.append(" ".join(ROW_SAVER))
 
