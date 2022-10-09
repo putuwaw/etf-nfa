@@ -3,3 +3,30 @@ li {
   list-style: none;
   padding: 0 !important;
 }
+.navbar {
+  background-color: #7189bf;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #beebe9;
+}
+
+#Profil {
+  background-color: #edf6e5;
+  padding-top: 6rem;
+}
+
+#Proyek {
+  background-color: #b9e6d3;
+  padding-top: 4rem;
+}
+
+#mesin {
+  background-color: #e6e7e5;
+  padding-top: 4rem;
+}
+
+.footer {
+  padding: auto;
+}
