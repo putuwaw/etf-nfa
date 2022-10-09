@@ -32,7 +32,7 @@
 
 <!-- Jumbotroon -->
 <section class="jumbotron text-center">
-    <img src="img/nfa example.png" alt="Kevin Moses" width="350" class="rounded-circle img-thumbnail" />
+    <img src="{{ url_for('static', filename='images/nfa example.png') }}" alt="Kevin Moses" width="350" class="rounded-circle img-thumbnail" />
     <h1 class="display-4">Implementasi NFA dengan ETF</h1>
     <p class="lead">Teori Bahasa & Otomata</p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -54,7 +54,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
             <div class="col mb-3">
                 <div class="card bg-transparent">
-                    <img src="img/Ata.jpg" class="card-img-top img-fluid rounded" alt="Projects 1">
+                    <img src="{{ url_for('static', filename='images/Ata.jpg') }}" class="card-img-top img-fluid rounded" alt="Projects 1">
                     <div class="card-body">
                         <p class="card-text text-center">Antonius Ata - 2108561080</p>
                     </div>
@@ -62,7 +62,7 @@
             </div>
             <div class="col mb-3">
                 <div class="card bg-transparent">
-                    <img src="img/Yoga.jpg" class="card-img-top img-fluid rounded" alt="Projects 1">
+                    <img src="{{ url_for('static', filename='images/Yoga.jpg') }}" class="card-img-top img-fluid rounded" alt="Projects 1">
                     <div class="card-body ">
                         <p class="card-text text-center">I Putu Yoga Laksana Putra - 2108561120</p>
                     </div>
@@ -70,7 +70,7 @@
             </div>
             <div class="col mb-3">
                 <div class="card bg-transparent">
-                    <img src="img/Widyantara.jpg" class="card-img-down img-fluid rounded" alt="Projects 1">
+                    <img src="{{ url_for('static', filename='images/Widyantara.jpg') }}" class="card-img-down img-fluid rounded" alt="Projects 1">
                     <div class="card-body">
                         <p class="card-text text-center">Putu Widyantara Artanta Wibawa - 2108561005</p>
                     </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="col mb-3">
                 <div class="card bg-transparent">
-                    <img src="img/Kevin.jpg" class="card-img-top img-fluid rounded" alt="Projects 1">
+                    <img src="{{ url_for('static', filename='images/Kevin.jpg') }}" class="card-img-top img-fluid rounded" alt="Projects 1">
                     <div class="card-body">
                         <p class="card-text text-center">Kevin Moses Waleleng - 2108561100</p>
                     </div>
@@ -159,19 +159,20 @@
                 {% endif %}
                 <h5 class=" mt-3">Masukan: <span class="lead"> {{string}} </span> </h5>
                 {% if language == "L1" %}
-                    <h5 class="">Bahasa: <span class="lead">L1</span> </h5>
+                    <h5 class="">Bahasa: <span class="lead">L1 (diawali dengan simbol 1 dan diakhiri dengan simbol 0 dan terdapat
+                        subtring 11)</span> </h5>
                     <h5 class="">Diagram Transisi NFA untuk L1:</h5>
                     <img class="img-fluid" src="{{ url_for('static', filename='images/languageL1.png') }}"
                         alt="Transition Diagram for Language L1">
                 {% endif %}
                 {% if language == "L2" %}
-                    <h5 class="">Bahasa: <span class="lead">L2</span> </h5>
+                    <h5 class="">Bahasa: <span class="lead">L2 (mengandung prefiks 11 dan jumlah 1 genap)</span> </h5>
                     <h5 class="">Diagram Transisi NFA untuk L2:</h5>
                     <img class="img-fluid" src="{{ url_for('static', filename='images/languageL2.png') }}"
                         alt="Transition Diagram for Language L2">
                 {% endif %}
                 {% if language == "L3" %}
-                    <h5 class="">Bahasa: <span class="lead">L3</span> </h5>
+                    <h5 class="">Bahasa: <span class="lead">L3 (diawali 00 dan diakhiri 11 dan jumlah 0 genap)</span> </h5>
                     <h5 class="">Diagram Transisi NFA untuk L3:</h5>
                     <img class="img-fluid" src="{{ url_for('static', filename='images/languageL3.png') }}"
                         alt="Transition Diagram for Language L3">
@@ -200,7 +201,7 @@
 <!-- footer -->
 <footer class=" bg-info text-black text-center pb-1">
     <p>Source Code: <i class="bi bi-github text-dark"></i>
-        <a href="https://github.com/putuwaw/etf-dfa" class="fw-bold"> Kelompok-5</a>
+        <a href="https://github.com/putuwaw/etf-nfa" class="fw-bold"> Kelompok-5</a>
     </p>
 </footer>
 <!-- Akhir Footer -->
